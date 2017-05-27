@@ -1,4 +1,12 @@
 <p align="center">
+  <a href="http://courses.angularclass.com/courses/angular-2-fundamentals" target="_blank">
+    <img width="438" alt="Angular 2 Fundamentals" src="https://cloud.githubusercontent.com/assets/1016365/17200649/085798c6-543c-11e6-8ad0-2484f0641624.png">
+  </a>
+</p>
+
+---
+
+<p align="center">
   <a href="https://angularclass.com" target="_blank">
     <img src="https://cloud.githubusercontent.com/assets/1016365/9864650/93a5660a-5b00-11e5-8716-a0d538d12913.png" alt="ng6-starter" width="480px;" >
   </a>
@@ -15,7 +23,7 @@ This repo serves as a minimal starter for those looking to get up-and-running wi
 * A ready-to-go build system for working with [ES6](https://git.io/es6features)
 * Tasks for generating additional boilerplate Angular components
 * A full testing system in place
-* [Stylus](https://learnboost.github.io/stylus/) support
+* [SASS](http://sass-lang.com/) support via node-sass
 
 **Check out the [JSPM version](https://github.com/angularclass/NG6-starter/tree/jspm)--an alternative to Webpack as an ES6 build system.**
 
@@ -38,7 +46,7 @@ ___
 
 # Walkthrough
 ## Build System
-NG6 uses Gulp and Webpack together for its build system. Yes, you don't need Gulp if you're using Webpack. This is true if your build system is only responsible for file manipulation. However, ours is not.
+NG6 uses NPM scripts, Gulp, and Webpack together for its build system. Yes, you don't need Gulp if you're using Webpack. This is true if your build system is only responsible for file manipulation. However, ours is not.
 
 `Webpack` handles all file-related concerns:
 * Transpiling from ES6 to ES5 with `Babel`
@@ -58,7 +66,13 @@ NG6 uses Gulp and Webpack together for its build system. Yes, you don't need Gul
 **Check out the [JSPM version](https://github.com/angularclass/NG6-starter/tree/jspm)--an alternative to Webpack as an ES6 build system.**
 
 ## File Structure
-We use a componentized approach with NG6. This will be the eventual standard (and particularly helpful, if using Angular's new router) as well as a great way to ensure a tasteful transition to Angular 2, when the time is ripe. Everything--or mostly everything, as we'll explore (below)--is a component. A component is a self-contained concern--may it be a feature or strictly-defined, ever-present element of the UI (such as a header, sidebar, or footer). Also characteristic of a component is that it harnesses its own stylesheets, templates, controllers, routes, services, and specs. This encapsulation allows us the comfort of isolation and structural locality. Here's how it looks:
+We use a componentized approach with NG6. This will be the eventual standard (and particularly helpful, if using 
+Angular's new router) as well as a great way to ensure a tasteful transition to Angular 2, when the time is ripe. 
+Everything--or mostly everything, as we'll explore (below)--is a component. A component is a self-contained 
+concern--may it be a feature or strictly-defined, ever-present element of the UI (such as a header, sidebar, or 
+footer). Also characteristic of a component is that it harnesses its own stylesheets, templates, controllers, routes, 
+services, and specs. This encapsulation allows us the comfort of isolation and structural locality. Here's how it 
+looks:
 ```
 client
 ⋅⋅app/
@@ -71,7 +85,7 @@ client
 ⋅⋅⋅⋅⋅⋅⋅⋅home.js * home entry file (routes, configurations, and declarations occur here)
 ⋅⋅⋅⋅⋅⋅⋅⋅home.component.js * home "directive"
 ⋅⋅⋅⋅⋅⋅⋅⋅home.controller.js * home controller
-⋅⋅⋅⋅⋅⋅⋅⋅home.styl * home styles
+⋅⋅⋅⋅⋅⋅⋅⋅home.scss * home styles
 ⋅⋅⋅⋅⋅⋅⋅⋅home.html * home template
 ⋅⋅⋅⋅⋅⋅⋅⋅home.spec.js * home specs (for entry, component, and controller)
 ```
@@ -83,39 +97,36 @@ All tests are also written in ES6. We use Webpack to take care of the logistics 
 * Mocha
 * Chai
 
-To run tests, type `npm test` or `karma start` in the terminal. Read more about testing [below](#testing).
+To run tests, type `npm test` in the terminal. Read more about testing [below](#testing).
 
 # Getting Started
 ## Dependencies
 Tools needed to run this app:
 * `node` and `npm`
-Once you have these, install the following as globals:  
-`npm install -g gulp karma karma-cli webpack`
 
 ## Installing
 * `fork` this repo
 * `clone` your fork
-* `npm install -g gulp karma karma-cli webpack` install global cli dependencies
 * `npm install` to install dependencies
 
 ## Running the App
-NG6 uses Gulp to build and launch the development environment. After you have installed all dependencies, you may run the app. Running `gulp` will bundle the app with `webpack`, launch a development server, and watch all files. The port will be displayed in the terminal.
+NG6 uses Gulp to build and launch the development environment. After you have installed all dependencies, you may run the app. Running `npm start` will bundle the app with `webpack`, launch a development server, and watch all files. The port will be displayed in the terminal.
  
-### Gulp Tasks
+### Tasks
 Here's a list of available tasks:
-* `webpack`
+* `npm run build`
   * runs Webpack, which will transpile, concatenate, and compress (collectively, "bundle") all assets and modules into `dist/bundle.js`. It also prepares `index.html` to be used as application entry point, links assets and created dist version of our application.
-* `serve`
+* `npm run serve`
   * starts a dev server via `webpack-dev-server`, serving the client folder.
-* `watch`
+* `npm run watch`
   * alias of `serve`
-* `default` (which is the default task that runs when typing `gulp` without providing an argument)
-	* runs `serve`.
-* `component`
+* `npm start` (which is the default task that runs when typing `gulp` without providing an argument)
+  * runs `serve`.
+* `npm run component`
   * scaffolds a new Angular component. [Read below](#generating-components) for usage details.
   
 ### Testing
-To run the tests, run `npm test` or `karma start`.
+To run the tests, run `npm test`.
 
 `Karma` combined with Webpack runs all files matching `*.spec.js` inside the `app` folder. This allows us to keep test files local to the component--which keeps us in good faith with continuing to build our app modularly. The file `spec.bundle.js` is the bundle file for **all** our spec files that Karma will run.
 
@@ -136,20 +147,20 @@ Following a consistent directory structure between components offers us the cert
 ⋅⋅⋅⋅⋅⋅⋅⋅componentName.component.js
 ⋅⋅⋅⋅⋅⋅⋅⋅componentName.controller.js
 ⋅⋅⋅⋅⋅⋅⋅⋅componentName.html
-⋅⋅⋅⋅⋅⋅⋅⋅componentName.styl // scoped to affect only its own template
+⋅⋅⋅⋅⋅⋅⋅⋅componentName.scss // scoped to affect only its own template
 ⋅⋅⋅⋅⋅⋅⋅⋅componentName.spec.js // contains passing demonstration tests
 ```
 
 You may, of course, create these files manually, every time a new module is needed, but that gets quickly tedious.
-To generate a component, run `gulp component --name componentName`.
+To generate a component, run `npm run component -- --name componentName`.
 
 The parameter following the `--name` flag is the name of the component to be created. Ensure that it is unique or it will overwrite the preexisting identically-named component.
 
 The component will be created, by default, inside `client/app/components`. To change this, apply the `--parent` flag, followed by a path relative to `client/app/components/`.
 
-For example, running `gulp component --name signup --parent auth` will create a `signup` component at `client/app/components/auth/signup`.  
+For example, running `npm run component -- --name signup --parent auth` will create a `signup` component at `client/app/components/auth/signup`.  
 
-Running `gulp component --name footer --parent ../common` creates a `footer` component at `client/app/common/footer`.  
+Running `npm run component -- --name footer --parent ../common` creates a `footer` component at `client/app/common/footer`.  
 
 Because the argument to `--name` applies to the folder name **and** the actual component name, make sure to camelcase the component names.
 
@@ -168,4 +179,4 @@ enjoy — **AngularClass**
 [![AngularClass](https://cloud.githubusercontent.com/assets/1016365/9863770/cb0620fc-5af7-11e5-89df-d4b0b2cdfc43.png  "Angular Class")](https://angularclass.com)
 ##[AngularClass](https://angularclass.com)
 > Learn AngularJS, Angular 2, and Modern Web Development from the best.
-> Looking for corporate Angular training, want to host us, or Angular consulting? scott@angularclass.com
+> Looking for corporate Angular training, want to host us, or Angular consulting? hello@angularclass.com
