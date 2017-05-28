@@ -1,6 +1,14 @@
 class NavbarController {
   constructor() {
-    this.name = 'navbar';
+  }
+  
+  init(){
+    this.isNavBarCollapsed = false;
+    this.toggleNavBar = () => this.isNavBarCollapsed = !this.isNavBarCollapsed;
+  }
+  
+  toggleNavBar() {
+    this.isNavBarCollapsed = !this.isNavBarCollapsed;
   }
 }
 
