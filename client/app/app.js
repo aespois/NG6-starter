@@ -12,13 +12,13 @@ import AppComponent from './app.component';
 let appModule = angular.module('app', [
     ngAnimate,
     ngAria,
-    "ui.bootstrap",
+    uiBootstrap,
     uiRouter,
     Common,
     Components
   ])
   .config(($locationProvider) => {
-    "ngInject";
+    'ngInject';
     // @see: https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions
     // #how-to-configure-your-server-to-work-with-html5mode
     $locationProvider.html5Mode(true).hashPrefix('!');
@@ -40,5 +40,5 @@ let appModule = angular.module('app', [
 
   .name;
 
-angular.bootstrap(document.body, [appModule]);  
-  // export default appModule;
+angular.bootstrap(document.body, [appModule]);
+// export default appModule;

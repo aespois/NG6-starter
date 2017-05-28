@@ -2,12 +2,9 @@
 
 app-footer {
   display: block;
-  position: absolute;
-  bottom: 0;
   width: 100%;
   
   footer {
-    height: $footerSize;// ver o arquivo app-css-globals.scss para essa variável
     background-color: #f8f8f8;
     border: solid 1px #e7e7e7;
 
