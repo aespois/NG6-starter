@@ -6,12 +6,7 @@
   "dependencies": {
     "angular": "^1.6.0",
     "angular-ui-router": "^1.0.0-beta.1",
-    "normalize.css": "^3.0.3",
-    "angular-animate": "^1.6.0",
-    "angular-aria": "^1.6.0",
-    "angular-material": "^1.1.0",
-    "angular-jwt": "git://github.com/auth0/angular-jwt.git#master",
-    "ngstorage": "git://github.com/gsklee/ngStorage.git#master"
+    "normalize.css": "^3.0.3"
   },
   "devDependencies": {
     "angular-mocks": "^1.6.0",
@@ -54,12 +49,7 @@
     "webpack": "^1.13.3",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.6.0",
-    "yargs": "^3.9.0",
-    "gulp-jscs": "^4.0.0",
-    "gulp-jshint": "^2.0.1",
-    "jscs-stylish": "^0.3.1",
-    "jshint": "^2.9.2",
-    "jshint-stylish": "^2.2.0"
+    "yargs": "^3.9.0"
   },
   "scripts": {
     "build": "gulp webpack",
@@ -77,9 +67,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/e-menezes/NG6-starter.git"
+    "url": "https://github.com/angularclass/NG6-starter.git"
   },
-  "author": "Erick Menezes Moreira",
+  "author": "AngularClass",
   "license": "Apache-2.0",
   "babel": {
     "plugins": [
