@@ -1,3 +1,5 @@
+import 'normalize.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import angular from 'angular';
 import ngAnimate from 'angular-animate';
 import ngAria from 'angular-aria';
@@ -35,7 +37,7 @@ let appModule = angular.module('app', [
   }])
 
   .component('app', AppComponent)
-  
+
   .name;
 
 angular.bootstrap(document.body, [appModule]);  

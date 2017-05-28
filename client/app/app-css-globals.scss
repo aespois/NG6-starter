@@ -8,23 +8,4 @@ $darkTextColor: #212121;
 $highlight: yellow;
 $footerSize: 60px;
 
-html {
-    font-size: 62.5%;
-    line-height: 1.4;
-}
 
-button, html, input, select, textarea {
-    font-family: Roboto,Helvetica Neue,sans-serif;
-}
-
-body, html {
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    min-height: 100%;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    height: 100%;
-    position: relative;
-}
