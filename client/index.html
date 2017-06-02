@@ -1,85 +1,23 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8">
+    <title>Meu App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script>
+      document.write('<base href="' + document.location + '" />');
+    </script>
+    <script src="app/boot.js"></script>
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <title>Meu App</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <script>
-    document.write('<base href="' + document.location + '" />');
-  </script>
+  <body ng-cloak>
 
-  <script src="app/app.js"></script>
-</head>
+    <app>
+      Carregando ...
+    </app>
 
-<body ng-cloak class="layout-row">
-<!-- ===========================================================================
-  Não altere nada no código abaixo!
-  
-  * Lembre que uma aplicação orientada a componentes é uma árvore de componentes,
-  o componente <app></app> abaixo é o primeiro, o componente raiz.
-  
-  * Os elementos que são fixos na sua aplicação, ou seja, estão presentes em 
-  todos os cenários como a barra de navegação ou um rodapé ou banners devem ser
-  colocados no componente app (app/app.component.js)
-  
-  * Carregando, é apenas um texto que aparecerá na tela até que o componente seja
-  construído e sua view colocada no lugar.
-============================================================================ -->
-  
-  <app class="layout-column flex">
-    Carregando ...
-  </app>
-  
-<!-- ===========================================================================
-  Não altere nada no código abaixo!
-  
-  * Importação do primeiro arquivo, app.js, e amarração da aplicação no body, 
-  como se tivéssemos colocado o ng-app no body da aplicação.
-============================================================================ -->
-
-  <!--<script src="https://npmcdn.com/systemjs@0.19.47/dist/system.src.js"></script>
-  <script src="https://npmcdn.com/babel-core@5.5.8/browser-polyfill.js"></script>
-  <script src="systemjs.config.js"></script>-->
-  <script>
-    // ;
-    // (function() {
-    //   console.clear();
-    //   System.import('prefixfree');
-    //   System.import('~/app/app')
-    //     .then(function(appModule) {
-    //       angular.bootstrap(document.body, [appModule['default']]);
-    //     });
-    // }());
-  </script>
-  
-<!-- ===========================================================================
-  Não altere nada no código abaixo!
-  
-  * No trecho abaixo podemos fazer a inicialização adiada de scripts, isto é só
-  os carregaremos quando eles forem necessários.
-============================================================================ -->
-
-  <!--<script async="" defer="" type="text/javascript">
-    WebFontConfig = {
-      google: {
-        families: ['Lato::latin']
-      }
-    };
-    (function() {
-      var wf = document.createElement('script');
-      wf.src = ('https:' === document.location.protocol ? 'https' : 'http') +
-        '://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js';
-      wf.type = 'text/javascript';
-      wf.async = 'true';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(wf, s);
-    })();
-  </script>-->
-
-</body>
-
+  </body>
 </html>
