@@ -1,0 +1,15 @@
+@import "../../app-css-globals.scss";
+
+app-footer {
+  display: block;
+  width: 100%;
+  
+  footer {
+    background-color: #f8f8f8;
+    border: solid 1px #e7e7e7;
+
+    > div {
+      text-align: center;
+    }
+  }
+}

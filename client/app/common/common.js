@@ -1,3 +1,4 @@
+import './common.scss'; //css comum a todas as views
 import angular from 'angular';
 import navbarModule from './navbar/navbar';
 import footerModule from './footer/footer';

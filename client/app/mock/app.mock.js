@@ -1,7 +1,8 @@
 import angular from 'angular';
 import angularMocks from 'angular-mocks';
-import appModule from './app';
-import testMock from './mock/test';
+import appModule from '../app';
+import testMock from './test/test';
+import contactsMock from './contacts/contacts';
 
 let appMockModule = angular.module('appMock', [
   appModule,
@@ -9,6 +10,7 @@ let appMockModule = angular.module('appMock', [
 ])
 
 .run(testMock)
+.run(contactsMock)
 
 .name;
 

@@ -1,0 +1,8 @@
+@import "../../app-css-globals.scss";
+
+home {
+  display: block;
+  p {
+    background-color: $highlight;
+  }
+}

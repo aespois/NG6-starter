@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1 ng-bind="$ctrl.titulo"></h1>
+  </div>
+  <div>
+    <h3>Lista de contatos</h3>
+    <p ng-repeat="contact in $ctrl.contacts">
+      <span><strong>{{contact.name}}</strong></span>
+      <span>{{contact.phone}}</span>
+    </p>
+  </div>
+</div>
