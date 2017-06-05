@@ -38,7 +38,7 @@ let paths = {
   ],
   entry: [
     'babel-polyfill',
-    path.join(__dirname, root, 'app/app.js')
+    path.join(__dirname, root, 'app/boot.js')
   ],
   output: root,
   blankTemplates: path.join(__dirname, 'generator', 'component/**/*.**'),

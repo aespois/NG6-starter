@@ -1,6 +1,7 @@
 import angular from 'angular';
-import appModule from 'app.js';
-import testMock from 'mock/test';
+import angularMocks from 'angular-mocks';
+import appModule from './app';
+import testMock from './mock/test';
 
 let appMockModule = angular.module('appMock', [
   appModule,
