@@ -1,0 +1,62 @@
+html {
+    font-size: 62.5%;
+    line-height: 1.4;
+}
+
+button, html, input, select, textarea {
+    font-family: Roboto,Helvetica Neue,sans-serif;
+}
+
+body, html {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    min-height: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100%;
+    position: relative;
+}
+
+body {
+    overflow: hidden;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.layout-column, .layout-row {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex; }
+
+.layout-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column; }
+
+.layout-row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row; }
+
+
+.flex, .flex-grow {
+    -webkit-box-flex: 1;
+    box-sizing: border-box;
+}
+
+.flex {
+    -webkit-flex: 1;
+    flex: 1;
+}
+
+.flex-noshrink {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 auto;
+    flex: 1 0 auto;
+    box-sizing: border-box;
+}

@@ -1,4 +1,4 @@
 import angular from 'angular';
-import appModule from './app.mock';
+import appModule from './mock/app.mock';
 
 angular.bootstrap(document.body, [appModule]);
