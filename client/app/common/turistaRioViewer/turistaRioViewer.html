@@ -1,0 +1,10 @@
+<div>
+  <h1>{{ $ctrl.name }}</h1>
+  <select
+          ng-model="$ctrl.categoria"
+          ng-options="item.value as item.nome for item in $ctrl.opcoes track by item.nome"
+          ng-change="$ctrl.onCategoriaChanged()">
+  </select>
+  <h3>{{$ctrl.categoria}}</h3>
+  <p ng-repeat="dado in $ctrl.dados">{{dado.name}}</p>
+</div>
