@@ -2,11 +2,23 @@
   <div class="jumbotron">
     <h1 ng-bind="$ctrl.titulo"></h1>
   </div>
-  <div>
+  <div class="col-xs-6">
     <h3>Lista de contatos</h3>
-    <p ng-repeat="contact in $ctrl.contacts">
+    <p ng-repeat="contact in $ctrl.contacts track by contact.id" ng-click="$ctrl.onContatoClicked(contact)">
       <span><strong>{{contact.name}}</strong></span>
       <span>{{contact.phone}}</span>
     </p>
+  </div>
+  <div class="col-xs-6">
+    <h3>Novo contato</h3>
+    <input type="text" placeholder="nome" ng-model="$ctrl.contato.name">
+    <button ng-click="$ctrl.editing ? $ctrl.modificarContato() : $ctrl.novoContato()">
+      {{$ctrl.editing ? 'Alterar' : 'Adicionar'}}
+      </button>
+    <input type="text" placeholder="telefone" ng-model="$ctrl.contato.phone">
+    <button ng-click="$ctrl.editing ? $ctrl.deletarContato() : $ctrl.resetarContatos()">
+      {{$ctrl.editing ? 'Deletar' : 'Resetar contatos'}}
+    </button>
+    <span>{{$ctrl.erro}}</span>
   </div>
 </div>

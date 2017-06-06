@@ -14,6 +14,26 @@ class ContactsService {
       }
     });
   }
+
+  createContact(_name, _phone) {
+    return this.$http.post('/api/contacts', {name:_name, phone:_phone})
+    .then( (response)=>response.data ); // 'return response.data' está implícito.
+  }
+
+  deleteContacts(){
+    return this.$http.delete(`/api/contacts`)
+    .then( (response)=>response.data ); // 'return response.data' está implícito.
+  }
+  
+  deleteContact(id){
+    return this.$http.delete(`/api/contacts/${id}`)
+    .then( (response)=>response.data ); // 'return response.data' está implícito.
+  }
+
+  modifyContacts(_name, _phone, id) {
+    return this.$http.put(`/api/contacts/${id}`, {name:_name, phone:_phone})
+    .then( (response)=>response.data ); // 'return response.data' está implícito.
+  }
 }
 
 ContactsService.$inject = ['$http','$q'];
