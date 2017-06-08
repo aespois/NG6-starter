@@ -1,0 +1,22 @@
+<h3>Novo contato</h3>
+<div class="row">
+  <input type="text"
+        placeholder="nome"
+        ng-model="$ctrl.contato.name">
+  <button ng-click="$ctrl.editing ? 
+                    $ctrl.modificarContato() :
+                    $ctrl.novoContato({$event:$ctrl.contato})">
+    {{$ctrl.editing ? 'Alterar' : 'Adicionar'}}
+  </button>
+</div>
+<div class="row">
+  <input type="text"
+        placeholder="telefone"
+        ng-model="$ctrl.contato.phone">
+  <button ng-click="$ctrl.editing ?
+                    $ctrl.deletarContato() :
+                    $ctrl.resetarContatos()">
+    {{$ctrl.editing ? 'Deletar' : 'Resetar contatos'}}
+  </button>
+</div>
+<span>{{$ctrl.erro}}</span>

@@ -1,26 +1,32 @@
 class ContactsController {
-  constructor(ContactsService) {
+  constructor(ContactsService, $state) {
     this.titulo = 'Contacts';
     this.ContactsService = ContactsService;
+    this.$state = $state;
     ContactsService.getContacts()
       .then( contacts => this.contacts = contacts );
   }
 
-  novoContato(){
-    if(this.contato && this.contato.name && this.contato.phone) {
+  $onInit(){
+    this.editing = false;
+  }
+
+  novoContato(contato) {
+    console.log(contato);
+    if(contato && contato.name && contato.phone) {
       this.erro = 'Criando contato';
-      this.ContactsService.createContact(this.contato.name, this.contato.phone)
+      this.ContactsService.createContact(contato.name, contato.phone)
         .then((contacts)=>{
           this.contacts = contacts;
-          delete this.contato;
+          this.contato = {};
           this.erro = 'Contato criado com sucesso!';
         });
-    } else{
+    } else {
       this.erro = 'Nome e telefone não podem estar vazios!'
     }
   }
 
-  resetarContatos(){
+  resetarContatos() {
     this.ContactsService.deleteContacts()
       .then((contacts)=>{
         this.contacts = contacts;
@@ -41,7 +47,7 @@ class ContactsController {
   onContatoClicked(contato){
     this.contato = angular.copy(contato);
     this.editing = true;
-    console.log(contato);
+    this.$state.go('contacts.edit');
   }
 
   modificarContato(){
@@ -55,5 +61,5 @@ class ContactsController {
   }
 }
 
-ContactsController.$inject = ['ContactsService'];
+ContactsController.$inject = ['ContactsService','$state'];
 export default ContactsController;

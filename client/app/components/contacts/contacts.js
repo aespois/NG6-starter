@@ -14,6 +14,20 @@ let contactsModule = angular.module('contacts', [
     .state('contacts', {
       url: '/contacts',
       component: 'contacts'
+    })
+    .state('contacts.edit', {
+      url: '/edit',
+      template: `
+        <contacts-editor
+          contato="$ctrl.contato"
+          editing="$ctrl.editing"
+          erro="{{$ctrl.erro}}"
+          novo-contato="$ctrl.novoContato($event)"
+          modificar-contato="$ctrl.modificarContato($event)"
+          deletar-contato="$ctrl.deletarContato($event)"
+          resetar-contatos="$ctrl.resetarContatos($event)">
+        </contacts-editor>
+      `
     });
 })
 

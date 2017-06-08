@@ -1,0 +1,6 @@
+<h3>Lista de contatos</h3>
+<p ng-repeat="contato in $ctrl.contatos track by contato.id" 
+   ng-click="$ctrl.onContatoClicked({$event:contato})">
+  <span><strong>{{contato.name}}</strong></span>
+  <span>{{contato.phone}}</span>
+</p>
