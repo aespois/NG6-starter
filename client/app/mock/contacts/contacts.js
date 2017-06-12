@@ -2,7 +2,7 @@ import angular from 'angular';
 import _contacts from './contacts-data';
 
 function ContactsMock($httpBackend, $log, storage) {
-  let contacts = storage.load('contacts', _contacts);
+  let contacts = angular.copy(storage.load('contacts', _contacts));
   let _id = storage.load('contacts-index', _contacts.length+1);
   
   $httpBackend.whenGET('/api/contacts').respond( (method, url, data, headers) => {

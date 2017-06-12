@@ -14,7 +14,10 @@ let homeModule = angular.module('home', [
   $stateProvider
     .state('home', {
       url: '/',
-      component: 'home'
+      views: {
+        '': {component: 'home'},
+        footer: {template: '<app-footer> Rodapé customizado para o home esta aplicação </app-footer>'}
+      }
     });
 })
 
